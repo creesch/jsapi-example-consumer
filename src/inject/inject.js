@@ -23,17 +23,16 @@ const addElement = (e) => {
     return;
   }
 
-  // Add a class so the extension on refire can tell this target has been handled before.
-  target.classList.add(`${NAME}-handled`);
-
-  // Create element that will be inserted in the container.
-  const element = document.createElement('span');
-  element.textContent = `⚠ ${e.detail.type}`;
-
-  // Pretty printed detail information the jsAPI send for this container.
-  element.title = JSON.stringify(e.detail, null, 4);
-
   requestAnimationFrame(function() {
+    // Add a class so the extension on refire can tell this target has been handled before.
+    target.classList.add(`${NAME}-handled`);
+
+    // Create element that will be inserted in the container.
+    const element = document.createElement('span');
+    element.textContent = `⚠ ${e.detail.type}`;
+
+    // Pretty printed detail information the jsAPI send for this container.
+    element.title = JSON.stringify(e.detail, null, 4);
     target.appendChild(element);
   });
 };
