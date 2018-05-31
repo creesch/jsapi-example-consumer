@@ -18,7 +18,7 @@ const addElement = (e) => {
   });
 };
 
-var acknowledge = (e) => {
+const acknowledge = (e) => {
   console.log(e)
 };
 
@@ -30,7 +30,7 @@ const main = () => {
   document.addEventListener('reddit', addElement, true);
   document.addEventListener('reddit.urlChanged', acknowledge, true);
 
-  var meta = document.createElement('meta');
+  const meta = document.createElement('meta');
   meta.name = 'jsapi.consumer';
   meta.content = NAME;
   document.head.appendChild(meta);
