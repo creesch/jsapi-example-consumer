@@ -27,9 +27,9 @@ The redesign of reddit means that third party extensions and userscripts will no
 
 ## Solution 
 
-To help out third party developers the jsAPI has been developed as a way to communicate what is present on page (posts, users, comments, etc) and changes in what is present (new posts loaded, url changes, etc). Additionally it provides specific dom nodes as containers for third party developers to write into. 
+To help out third party developers, the jsAPI has been developed as a way to communicate what is present on page (posts, users, comments, etc) and updates to what is present (new posts loaded, url changes, etc). Additionally, it provides specific DOM nodes as containers for third party developers to put elements into. 
 
-Third part extensions that register as consumer will first receive a backlog of currently relevant events. After having received the backlog interaction with reddit will result in events being fired for relevant things allowing the extensions to act on those.
+Third party extensions that register as a consumer will first receive a backlog of currently relevant events and container nodes. Events will be fired for new elements or updates.
 
 ## Considerations 
 
