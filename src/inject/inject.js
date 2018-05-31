@@ -47,12 +47,12 @@ const main = () => {
     return;
   }
 
-  // Will listen for dom elements being added.
+  // Will listen for dom elements being added or updated.
   document.addEventListener('reddit', addElement, true);
   // Will listen for page change events.
   document.addEventListener('reddit.urlChanged', acknowledge, true);
 
-  // let the jsAPI know that this extension wants to interact.
+  // Register extension as JSAPI consumer.
   const meta = document.createElement('meta');
   meta.name = 'jsapi.consumer';
   meta.content = NAME;
