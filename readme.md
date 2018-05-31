@@ -1,6 +1,6 @@
 # Reddit jsAPI example consumer extension.
 
-This repository provides example code for the implementation of jsAPI consumers. When loaded in the browser it will do the following things:
+This repository provides example code for the implementation of jsAPI consumers. When loaded in the browser, the extension will:
 
 - Log all jsAPI events to the browser console.
 - Display the location of jsAPI containers on the page in the following format `⚠ type`. 
