@@ -12,7 +12,7 @@ const addElement = (e) => {
   const target = e.target.querySelector(`[data-name="${NAME}"]`);
 
   // Events are received that are intended for all consumers. 
-  // This makes sure the extension only handles intended for it.
+  // In case the JSAPI hasn't finished registering this consumer yet.
   if(!target) {
     return;
   }
