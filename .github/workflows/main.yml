@@ -18,7 +18,7 @@ jobs:
         with:
           owner: cure53
           repo: DOMPurify
-          downloadPath: path/whatever/test
+          downloadPath: test/whatever/path
       - name: unzip
         run: |
           cd test/whatever/path
