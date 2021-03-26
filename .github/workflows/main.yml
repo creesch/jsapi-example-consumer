@@ -31,7 +31,7 @@ jobs:
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
-          commit-message: Update dompurify dependencies
-          title: Update dompurify dependencies
-          body: this is a test
+          commit-message: Update DOMPurify to ${{ steps.download.outputs.name }}
+          title: Update DOMPurify to ${{ steps.download.outputs.name }}
+          body: ${{ steps.download.outputs.body }}
           branch: update-dompurify-dependencies
