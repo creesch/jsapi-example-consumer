@@ -24,8 +24,9 @@ jobs:
           cd test/whatever/path
           FILENAME="${{ steps.download.outputs.filename }}"
           DIRECTORY= ${FILENAME%????}
+          echo $DIRECTORY
           unzip $filename
-          cat "${DIRECTORY}/dist/purify.js"
+          ls -rtl
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
