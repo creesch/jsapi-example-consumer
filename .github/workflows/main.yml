@@ -21,15 +21,16 @@ jobs:
           downloadPath: path/whatever/test
       - name: unzip
         run: |
-          cd path/whatever/test
+          cd test/whatever/path
           FILENAME="${{ steps.download.outputs.filename }}"
-          echo $FILENAME
-          echo ${FILENAME%????}
+          DIRECTORY= ${FILENAME%????}
+          unzip $filename
+          cp "${DIRECTORY}/dist/purify.js" /purify.js
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
           token: ${{ secrets.token }}
-          commit-message: Update dependencies
-          title: Update dependencies
+          commit-message: Update dompurify dependencies
+          title: Update dompurify dependencies
           body: this is a test
-          branch: update-dependencies
+          branch: update-dompurify-dependencies
