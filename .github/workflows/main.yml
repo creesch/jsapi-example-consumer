@@ -24,6 +24,7 @@ jobs:
           cd path/whatever/test
           FILENAME="${{ steps.download.outputs.filename }}"
           echo $FILENAME
+          echo ${FILENAME%????}
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
