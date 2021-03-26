@@ -24,7 +24,7 @@ jobs:
           cd test/whatever/path
           FILENAME="${{ steps.download.outputs.filename }}"
           unzip $FILENAME
-          DIRECTORY=${ls -d */}
+          DIRECTORY=$(ls -d */)
           echo $DIRECTORY
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
