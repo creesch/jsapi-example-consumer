@@ -23,6 +23,7 @@ jobs:
         run: |
           cd test/whatever/path
           FILENAME="${{ steps.download.outputs.filename }}"
+          unzip $FILENAME
           ls -rtl
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
