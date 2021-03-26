@@ -1,17 +1,15 @@
 name: Check for DOMPurify updates
 
-# Controls when the action will run. 
 on: workflow_dispatch
 
 jobs:
   checkdepedencies:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checkout toolbox
       - name: checkout
         uses: actions/checkout@v2
+      # Download latest DOMPurify
       - name: download
         id: download
         uses: creesch/github-latest-release-zip@main
@@ -19,6 +17,7 @@ jobs:
           owner: cure53
           repo: DOMPurify
           downloadPath: test/whatever/path
+      # Unzip and copy over the release purify.js if there is an update this will create a delta.
       - name: unzip
         run: |
           BASEDIR=$(pwd)
@@ -28,6 +27,7 @@ jobs:
           DIRECTORY=$(ls -d */)
           echo $DIRECTORY
           cp "${DIRECTORY}dist/purify.js" "${BASEDIR}/purify.js"
+      # Run pullrequest action, if the previous stepped caused no difference no pullrequest will be made.
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
