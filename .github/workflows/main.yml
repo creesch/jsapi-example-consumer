@@ -25,7 +25,7 @@ jobs:
           FILENAME="${{ steps.download.outputs.filename }}"
           DIRECTORY= ${FILENAME%????}
           echo $DIRECTORY
-          unzip $filename
+          unzip $FILENAME
           ls -rtl
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
