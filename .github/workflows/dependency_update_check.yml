@@ -40,3 +40,4 @@ jobs:
 
             ${{ steps.download.outputs.body }}
           branch: update-DOMPurify-dependency
+          delete-branch: true
