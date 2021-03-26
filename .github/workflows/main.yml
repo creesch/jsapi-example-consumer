@@ -22,10 +22,8 @@ jobs:
       - name: unzip
         run: |
           cd path/whatever/test
-          FILENAME=${{ steps.download.outputs.filename }} 
-          unzip $FILENAME
-          cd ${FILENAME%.*}
-          ls
+          FILENAME="${{ steps.download.outputs.filename }}"
+          echo $FILENAME
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
