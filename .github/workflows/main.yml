@@ -23,8 +23,6 @@ jobs:
         run: |
           cd test/whatever/path
           FILENAME="${{ steps.download.outputs.filename }}"
-          DIRECTORY= ${FILENAME%????}
-          echo $DIRECTORY
           ls -rtl
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
