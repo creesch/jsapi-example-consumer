@@ -17,7 +17,7 @@ jobs:
         with:
           owner: cure53
           repo: DOMPurify
-          path: path/whatever/test
+          downloadPath: path/whatever/test
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
