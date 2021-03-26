@@ -1,4 +1,4 @@
-name: testaction
+name: Check for DOMPurify updates
 
 # Controls when the action will run. 
 on: workflow_dispatch
