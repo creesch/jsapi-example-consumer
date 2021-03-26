@@ -25,7 +25,7 @@ jobs:
           FILENAME="${{ steps.download.outputs.filename }}"
           DIRECTORY= ${FILENAME%????}
           unzip $filename
-          cp "${DIRECTORY}/dist/purify.js" /purify.js
+          cat "${DIRECTORY}/dist/purify.js"
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
