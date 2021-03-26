@@ -1,0 +1,28 @@
+name: testaction
+
+# Controls when the action will run. 
+on: workflow_dispatch
+
+jobs:
+  checkdepedencies:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: download
+        uses: creesch/github-latest-release-zip@master
+        with:
+          owner: cure53
+          repo: DOMPurify
+          path: path/whatever/test
+      - name: pullrequest
+        uses: peter-evans/create-pull-request@v3
+        with: 
+          token: ${{ secrets.token }}
+          commit-message: Update dependencies
+          title: Update dependencies
+          body: this is a test
+          branch: update-dependencies
