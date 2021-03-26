@@ -31,7 +31,6 @@ jobs:
       - name: pullrequest
         uses: peter-evans/create-pull-request@v3
         with: 
-          token: ${{ secrets.token }}
           commit-message: Update dompurify dependencies
           title: Update dompurify dependencies
           body: this is a test
