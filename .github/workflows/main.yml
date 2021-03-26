@@ -13,7 +13,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: download
-        uses: creesch/github-latest-release-zip@master
+        uses: creesch/github-latest-release-zip@main
         with:
           owner: cure53
           repo: DOMPurify
