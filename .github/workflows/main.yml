@@ -34,4 +34,4 @@ jobs:
           commit-message: Update DOMPurify to ${{ steps.download.outputs.name }}
           title: Update DOMPurify to ${{ steps.download.outputs.name }}
           body: ${{ steps.download.outputs.body }}
-          branch: update-dompurify-dependencies
+          branch: update-dompurify-dependency
